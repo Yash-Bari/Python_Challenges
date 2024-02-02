@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Flask Web Page - User List(EX 4)</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>User List</h2>
+        <a href="{{ url_for('add_user') }}" class="add-user-link">Add User</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.skills }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

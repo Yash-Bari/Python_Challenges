@@ -1,0 +1,4 @@
+Interns should enhance the form handling from Exercise 4 by incorporating data persistence. This may involve:
+
+Storing form submissions in a database or a file.
+Creating a Python route to retrieve and display the stored data on a separate page.

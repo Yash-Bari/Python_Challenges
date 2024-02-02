@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dynamic Flask Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Your Flask Web Page</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="datetime-container">
+            <div class="date-container">
+                <p class="datetime-label">Date:</p>
+                <p class="datetime-value">{{ current_datetime.strftime('%B %d, %Y') }}</p>
+            </div>
+            <div class="time-container">
+                <p class="datetime-label">Time:</p>
+                <p class="datetime-value">{{ current_datetime.strftime('%H:%M:%S %p') }}</p>
+            </div>
+        </div>
+        <p>This is a simple template with header having element Home, About and Contact; with dynamic date and time content.There is footer with Some Contact details.</p>
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

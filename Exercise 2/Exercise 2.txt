@@ -1,0 +1,5 @@
+Interns should create a Python web server using a framework of their choice (e.g., Flask, Django). The server should:
+
+Serve the HTML/CSS page created in Exercise 1.
+Handle a GET request and respond with the page.
+Include appropriate routing.

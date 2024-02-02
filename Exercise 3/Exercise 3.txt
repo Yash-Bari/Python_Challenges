@@ -1,0 +1,4 @@
+Interns should enhance the web page created on Exercise 1 by adding dynamic content. This should involve:
+
+Creating a Python function or route that generates dynamic content (e.g., date/time, random quotes, weather information).
+Incorporating this dynamic content into the web page using templating (if applicable to the chosen framework).

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Flask Form Web Page</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h2>Add User</h2>
+        <form method="post" action="{{ url_for('add_user') }}" class="user-form">
+            {{ csrf_token }}
+            
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <a href="{{ url_for('index') }}" class="back-link">Back to User List</a>
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

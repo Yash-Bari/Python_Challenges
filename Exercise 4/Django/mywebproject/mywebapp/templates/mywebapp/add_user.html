@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link rel="stylesheet" href="{% static 'mywebapp/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Django Form Page (Ex 4)</h1>
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h2>Add User</h2>
+        <form method="post" action="{% url 'add_user' %}" class="user-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_name">Full Name:</label>
+                {{ form.name }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_address">Address:</label>
+                {{ form.address }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_phone">Phone:</label>
+                {{ form.phone }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_skills">Skills:</label>
+                {{ form.skills }}
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <a href="{% url 'index' %}" class="back-link">Back to User List</a>
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

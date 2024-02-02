@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link rel="stylesheet" href="{% static 'mywebapp/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Dynamic Django Web Page(Ex 3)</h1>
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="datetime-container">
+            <p class="datetime-value">{{ current_datetime|date:'F d, Y' }} - {{ current_datetime|time:'h:i A' }}</p>
+            <p>This is a simple template with header having element Home, About and Contact; with dynamic date and time content.There is footer with Some Contact details.</p>
+        </div>
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+Interns should create a basic HTML/CSS web page with the following components:
+
+Header with a title and navigation menu.
+A main content area with some text.
+A footer with contact information.

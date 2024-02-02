@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <link rel="stylesheet" href="{% static 'mywebapp/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Django User Data Page (Ex 5)</h1>
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>User List</h2>
+        <p>This is a simple template with header having element Home, About and Contact; with dynamic date and time content and user submitted data.There is footer with Some Contact details.</p>
+        <br>
+        <p>Current date and time: {{ current_datetime }}</p>
+        <a href="{% url 'add_user' %}">Add User</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.skills }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        Contact us at: yashbari99@gmail.com | Phone: +91 9834148536
+    </footer>
+
+</body>
+</html>

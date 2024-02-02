@@ -1,0 +1,4 @@
+Interns should create a form on the web page to collect user data. This exercise should involve:
+
+Adding a form with input fields for user details (e.g., name, email).
+Creating a Python route to handle form submissions and display the submitted data.
